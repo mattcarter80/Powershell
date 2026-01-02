@@ -1,0 +1,17 @@
+<monitor>
+    <name>MonitorName</name>
+    <type>managed</type>
+    <description>What does the Monitor do</description>
+    <monitor-configuration></monitor-configuration>
+    <monitor-run-task>
+        <!-- Edit execution-style as needed -->
+        <execution-stye>periodic</execution-style>
+        <name>Run</name>
+        <type>executable</type>
+        <task-arguments></task-srguments>
+        <executable-task>
+            <type>file</type>
+            <file os-type="windows">SampleBatchJobForAppDynamicsUpload.bat</file>
+        </executable-task>
+    </monitor-run-task>
+</monitor>
