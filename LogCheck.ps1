@@ -6,7 +6,10 @@
         Updated in 'x' minutes
         Specific Error String
         Prints a metric value for Monitoring / Observability software for each of the above criteria
+				** Will only run if file exists **
 #>
+
+if (Test-Path -Path "<PathToFile>") {
 
 # Calculate Size
 $FileSize = (Get-Item -Path "<PathToFile>")
@@ -24,3 +27,7 @@ Write-Host "<EnterMetricUploadPath>, value=$Value3"
 # Specific Error String
 $Value4 = (Get-ChildItem -Path "<PathToFile>" | Select-String -Pattern "<ErrorString>" | Measure-Object).Count
 Write-Host "<EnterMetricUploadPath>, value=$Value4"
+
+}
+
+else {exit}
