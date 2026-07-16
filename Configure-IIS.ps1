@@ -29,7 +29,7 @@ Write-Host "Application Pool '$AppPoolName' configured successfully."
 
 # Add Hidden Segment to Request Filtering (settings.json)
 $filterPath = "system.webServer/security/requestFiltering"
-Add-WebConfigurationProperty -PSPath "IIS:\Sites\$SiteName" -Filter "$filterPath/hiddenSegments" -Name "." -Value @{segment="settings.json"}
+Add-WebConfigurationProperty -PSPath "IIS:\Sites\$SiteName" -Filter "$filterPath/hiddenSegments" -Name "." -Value @{segment="filename.type"}
 
 Write-Host "Hidden segment 'settings.json' added to Request Filtering."
 
